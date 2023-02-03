@@ -14,4 +14,13 @@
       </button>
     </div>
   </div>
+
+  <div class="alert alert-success mt-4" *ngIf="show_alert; else message">
+    Se ha enviado el mensaje
+    <span (click)="show_alert = false">X</span>
+  </div>
+
+  <ng-template #message>
+    <div class="alert alert-danger mt-4">test message</div>
+  </ng-template>
 </div>
