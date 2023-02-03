@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 
 import { CountComponent } from './count/count.component';
 import { ButtonComponent } from './button/button.component';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CountComponent,
-    ButtonComponent
+    ButtonComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
