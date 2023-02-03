@@ -1,4 +1,17 @@
 <p>form works!</p>
+<p>*ngSwitch</p>
+<div [ngSwitch]="day">
+  day of week ({{ day }}):
+  <span *ngSwitchCase="1">Monday</span>
+  <span *ngSwitchCase="2">Tuesday</span>
+  <span *ngSwitchCase="3">Wednesday</span>
+  <span *ngSwitchCase="4">Thursday</span>
+  <span *ngSwitchCase="5">Friday</span>
+  <span *ngSwitchCase="6">Saturday</span>
+  <span *ngSwitchCase="7">Sunday</span>
+  <span *ngSwitchDefault>Not exists</span>
+</div>
+<hr />
 <p>*ngFor</p>
 <ul>
   <li *ngFor="let user of users; let i = index">
@@ -23,7 +36,7 @@
 
 <div class="alert alert-success mt-4" *ngIf="show_alert; else message">
   Se ha enviado el mensaje
-  <span (click)="show_alert = false">X</span>
+  <span (click)="show_alert = false" class="span-close">X</span>
 </div>
 
 <ng-template #message>

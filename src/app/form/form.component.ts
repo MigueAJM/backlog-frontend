@@ -54,4 +54,6 @@ export class FormComponent {
     this.show_alert = true;
     console.log({ username });
   }
+
+  day: number = new Date().getDay();
 }
