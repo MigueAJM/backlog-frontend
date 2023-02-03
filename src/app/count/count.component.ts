@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core"; // decorador component
+import { Person } from "../person.interface";
 
 @Component({
     selector: 'app-count', // nombre de etiqueta
@@ -17,7 +18,7 @@ export class CountComponent implements OnInit {
     age: number = 25
     active: boolean = true
 
-    person: any = {
+    person: Person = {
         name: 'Miguel Angel',
         age: 23,
         active: true
