@@ -1,4 +1,72 @@
 <p>form works!</p>
+<div class="card">
+  <div class="card-header">
+    <h5 class="card-title">Form</h5>
+  </div>
+  <div class="card-body">
+    <form (ngSubmit)="process()">
+      <div class="">
+        <label for="firstname" class="form-label">Name</label>
+        <input
+          name="firstname"
+          type="text"
+          class="form-control"
+          [(ngModel)]="users[0].firstname"
+        />
+      </div>
+      <div class="">
+        <label for="lastname" class="form-label">Last name</label>
+        <input
+          name="lastname"
+          type="text"
+          class="form-control"
+          [(ngModel)]="users[0].lastname"
+        />
+      </div>
+      <div class="">
+        <label for="username" class="form-label">Username</label>
+        <input
+          name="username"
+          type="text"
+          class="form-control"
+          [(ngModel)]="users[0].username"
+        />
+      </div>
+      <div class="">
+        <label for="email" class="form-label">Email</label>
+        <input
+          name="email"
+          type="text"
+          class="form-control"
+          [(ngModel)]="users[0].email"
+        />
+      </div>
+      <div class="">
+        <label for="password" class="form-label">Password</label>
+        <input
+          name="password"
+          type="password"
+          class="form-control"
+          [(ngModel)]="users[0].password"
+        />
+      </div>
+      <div class="form-check form-switch">
+        <label for="active" class="form-check-label">Active</label>
+        <input
+          name="active"
+          type="checkbox"
+          class="form-check-input"
+          role="switch"
+          [(ngModel)]="users[0].active"
+        />
+      </div>
+      <button type="submit" class="btn btn-dark">Save</button>
+    </form>
+  </div>
+  <div class="card-footer"></div>
+</div>
+{{ users[0] | json }}
+<hr />
 <p>*ngSwitch</p>
 <div [ngSwitch]="day">
   day of week ({{ day }}):

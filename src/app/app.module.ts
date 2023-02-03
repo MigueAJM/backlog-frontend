@@ -8,18 +8,12 @@ import { CountComponent } from './count/count.component';
 import { ButtonComponent } from './button/button.component';
 import { FormComponent } from './form/form.component';
 
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
-  declarations: [
-    AppComponent,
-    CountComponent,
-    ButtonComponent,
-    FormComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  declarations: [AppComponent, CountComponent, ButtonComponent, FormComponent],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -10,12 +10,11 @@ export class FormComponent {
   show_alert: boolean = false;
   users: User[] = [
     {
-      firstname: 'Miguel',
-      lastname: 'Angel',
-      username: 'migueajm',
-      email: 'miguelj@infoexpo.com',
-      password: 'this passsword is secret',
-      active: true,
+      firstname: '',
+      lastname: '',
+      username: '',
+      email: '',
+      password: '',
     },
     {
       firstname: 'Sebastian',
@@ -56,4 +55,8 @@ export class FormComponent {
   }
 
   day: number = new Date().getDay();
+
+  process() {
+    console.log(this.users[0]);
+  }
 }
