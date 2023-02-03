@@ -1,0 +1,30 @@
+<p>button works!</p>
+<div class="div">
+  <button
+    [ngClass]="{
+        disabled: button_disabled
+    }"
+    class="btn btn-primary"
+    (click)="text_color = 'text-primary'"
+  >
+    Blue
+  </button>
+  <button
+    [class.disabled]="button_disabled"
+    class="btn btn-success mx-2"
+    (click)="text_color = 'text-success'"
+  >
+    Green
+  </button>
+  <button
+    [class.disabled]="button_disabled"
+    class="btn btn-danger"
+    (click)="text_color = 'text-danger'"
+  >
+    Red
+  </button>
+</div>
+<p class="{{ text_color }}">It's works!</p>
+<p [class]="text_color">It's works!</p>
+
+<button class="btn btn-dark" (click)="button_disabled = !button_disabled">Activar/Desabilitar</button>
