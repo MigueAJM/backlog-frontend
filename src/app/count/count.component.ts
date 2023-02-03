@@ -11,7 +11,7 @@ export class CountComponent implements OnInit {
     constructor(){}
 
     ngOnInit(): void {
-        
+
     }
 
     name: string = 'Miguel Angel'
@@ -22,5 +22,15 @@ export class CountComponent implements OnInit {
         name: 'Miguel Angel',
         age: 23,
         active: true
+    }
+
+    number: number = 1
+
+    decrement() {
+      this.number--
+    }
+
+    increment(){
+      this.number++
     }
 }

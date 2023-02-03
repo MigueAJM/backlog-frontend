@@ -18,3 +18,7 @@
 
 ### Crear un nuevo componente.
 `ng generate component count` o `ng g c count`
+
+
+#### Notes:
+En las plantillas no se puede usar este tipo de sintaxis `numero++` o `numero -= 1`, ente caso seria de esta forma `numero = numero + 1`

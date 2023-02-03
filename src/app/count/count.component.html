@@ -1,1 +1,7 @@
 <h1>Count component: {{ name }} is active: {{ person.active }}</h1>
+
+<button (click)="decrement()">-</button>
+<!-- * <button (click)="number = number - 1">-</button> * -->
+<span>{{ number }}</span>
+<!-- * <button (click)="number = number + 1">+</button> * -->
+<button (click)="increment()">+</button>
