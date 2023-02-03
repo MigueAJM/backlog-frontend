@@ -12,7 +12,15 @@
           type="text"
           class="form-control"
           [(ngModel)]="users[0].firstname"
+          required
+          #firstname="ngModel"
         />
+        <span
+          class="text-danger"
+          [hidden]="firstname.valid || firstname.pristine"
+        >
+          * Field required
+        </span>
       </div>
       <div class="">
         <label for="lastname" class="form-label">Last name</label>
@@ -21,7 +29,15 @@
           type="text"
           class="form-control"
           [(ngModel)]="users[0].lastname"
+          required
+          #lastname="ngModel"
         />
+        <span
+          class="text-danger"
+          [hidden]="lastname.valid || lastname.pristine"
+        >
+          * Field required
+        </span>
       </div>
       <div class="">
         <label for="username" class="form-label">Username</label>
@@ -30,7 +46,15 @@
           type="text"
           class="form-control"
           [(ngModel)]="users[0].username"
+          required
+          #username="ngModel"
         />
+        <span
+          class="text-danger"
+          [hidden]="username.valid || username.pristine"
+        >
+          * Field required
+        </span>
       </div>
       <div class="">
         <label for="email" class="form-label">Email</label>
@@ -39,7 +63,12 @@
           type="text"
           class="form-control"
           [(ngModel)]="users[0].email"
+          required
+          #email="ngModel"
         />
+        <span class="text-danger" [hidden]="email.valid || email.pristine">
+          * Field required
+        </span>
       </div>
       <div class="">
         <label for="password" class="form-label">Password</label>
@@ -47,8 +76,16 @@
           name="password"
           type="password"
           class="form-control"
+          required
           [(ngModel)]="users[0].password"
+          #password="ngModel"
         />
+        <span
+          class="text-danger"
+          [hidden]="password.valid || password.pristine"
+        >
+          * Field required
+        </span>
       </div>
       <div class="form-check form-switch">
         <label for="active" class="form-check-label">Active</label>
@@ -65,6 +102,8 @@
   </div>
   <div class="card-footer"></div>
 </div>
+{{ firstname.errors | json }}<br />
+{{ firstname.valid }}<br />
 {{ users[0] | json }}
 <hr />
 <p>*ngSwitch</p>
