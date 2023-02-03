@@ -15,3 +15,6 @@
 ### Abrir instancia en el navegador.
 
 `ng serve -o`
+
+### Crear un nuevo componente.
+`ng generate component count` o `ng g c count`
