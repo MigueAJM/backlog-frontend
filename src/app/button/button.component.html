@@ -10,7 +10,7 @@
     Blue
   </button>
   <button
-    [class.disabled]="button_disabled"
+    [disabled]="button_disabled"
     class="btn btn-success mx-2"
     (click)="text_color = 'text-success'"
   >
@@ -28,3 +28,20 @@
 <p [class]="text_color">It's works!</p>
 
 <button class="btn btn-dark" (click)="button_disabled = !button_disabled">Activar/Desabilitar</button>
+
+<hr/>
+
+<div>
+    <button
+        class="btn btn-primary"
+        (click)="src = 'https://images.pexels.com/photos/13739093/pexels-photo-13739093.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load'"
+        >image one
+    </button>
+    <button
+        class="btn btn-success"
+        (click)="src = 'https://images.pexels.com/photos/9882736/pexels-photo-9882736.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load'"
+        >image two
+    </button>
+</div>
+
+<img [src]="src" width="300" alt="picture.random">
