@@ -4,7 +4,7 @@
     <h5 class="card-title">Form</h5>
   </div>
   <div class="card-body">
-    <form (ngSubmit)="process()">
+    <form (ngSubmit)="process()" #form_user_data="ngForm">
       <div class="">
         <label for="firstname" class="form-label">Name</label>
         <input
@@ -97,11 +97,18 @@
           [(ngModel)]="users[0].active"
         />
       </div>
-      <button type="submit" class="btn btn-dark">Save</button>
+      <button
+        type="submit"
+        class="btn btn-dark"
+        [disabled]="form_user_data.invalid"
+      >
+        Save
+      </button>
     </form>
   </div>
   <div class="card-footer"></div>
 </div>
+{{ form_user_data.valid }}<br />
 {{ firstname.errors | json }}<br />
 {{ firstname.valid }}<br />
 {{ users[0] | json }}
