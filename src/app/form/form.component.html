@@ -1,26 +1,31 @@
 <p>form works!</p>
-<div class="container">
-  <div class="card">
-    <div class="card-header">
-      <h5 class="card-title">Template variables</h5>
-    </div>
-    <div class="card-body">
-      <label for="" class="form-label">Username</label>
-      <input type="text" class="form-control" #username />
-    </div>
-    <div class="card-footer">
-      <button class="btn btn-dark" (click)="showInConsole(username.value)">
-        Show in console
-      </button>
-    </div>
+<p>*ngFor</p>
+<ul>
+  <li *ngFor="let user of users; let i = index">
+    {{ i + 1 + " " + user.username }}
+  </li>
+</ul>
+<hr />
+<div class="card">
+  <div class="card-header">
+    <h5 class="card-title">Template variables and *ngIf/else</h5>
   </div>
-
-  <div class="alert alert-success mt-4" *ngIf="show_alert; else message">
-    Se ha enviado el mensaje
-    <span (click)="show_alert = false">X</span>
+  <div class="card-body">
+    <label for="" class="form-label">Username</label>
+    <input type="text" class="form-control" #username />
   </div>
-
-  <ng-template #message>
-    <div class="alert alert-danger mt-4">test message</div>
-  </ng-template>
+  <div class="card-footer">
+    <button class="btn btn-dark" (click)="showInConsole(username.value)">
+      Show in console
+    </button>
+  </div>
 </div>
+
+<div class="alert alert-success mt-4" *ngIf="show_alert; else message">
+  Se ha enviado el mensaje
+  <span (click)="show_alert = false">X</span>
+</div>
+
+<ng-template #message>
+  <div class="alert alert-danger mt-4">test message</div>
+</ng-template>
