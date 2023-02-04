@@ -8,11 +8,23 @@ import { CountComponent } from './count/count.component';
 import { ButtonComponent } from './button/button.component';
 import { FormComponent } from './form/form.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 @NgModule({
-  declarations: [AppComponent, CountComponent, ButtonComponent, FormComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  declarations: [
+    AppComponent,
+    CountComponent,
+    ButtonComponent,
+    FormComponent,
+    ReactiveFormComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
