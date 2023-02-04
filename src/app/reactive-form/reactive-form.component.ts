@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 import { User } from '../interfaces/user';
 
 @Component({
@@ -8,10 +8,13 @@ import { User } from '../interfaces/user';
   styleUrls: ['./reactive-form.component.sass'],
 })
 export class ReactiveFormComponent {
-  firstname = new FormControl('');
-  lastname = new FormControl('');
-  username = new FormControl('');
-  email = new FormControl('');
-  password = new FormControl('');
+  firstname = new FormControl('', Validators.required);
+  lastname = new FormControl('', [Validators.required]);
+  username = new FormControl('', Validators.required);
+  email = new FormControl('', [
+    Validators.required,
+    Validators.email
+  ]);
+  password = new FormControl('', Validators.required);
   active = new FormControl(false);
 }

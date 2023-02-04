@@ -8,22 +8,60 @@
       <div class="">
         <label for="firstname" class="form-label">Name</label>
         <input name="firstname" [formControl]="firstname" type="text" class="form-control" />
+        <span
+          class="text-danger"
+          [hidden]="firstname.valid || firstname.pristine"
+        >
+          * Field required
+        </span>
       </div>
       <div class="">
         <label for="lastname" class="form-label">Last name</label>
           <input name="lastname" [formControl]="lastname" type="text" class="form-control"/>
+          <span
+            class="text-danger"
+            [hidden]="lastname.valid || lastname.pristine"
+          >
+            * Field required
+          </span>
       </div>
       <div class="">
         <label for="username" class="form-label">Username</label>
         <input name="username" [formControl]="username" type="text" class="form-control" />
+        <span
+          class="text-danger"
+          [hidden]="username.valid || username.pristine"
+        >
+          * Field required
+        </span>
       </div>
       <div class="">
         <label for="email" class="form-label">Email</label>
         <input name="email" [formControl]="email"type="text" class="form-control" />
+        <span
+          *ngIf="email.errors?.['required']"
+          class="text-danger"
+          [hidden]="email.valid || email.pristine"
+        >
+          * Field required
+        </span>
+        <span
+          *ngIf="email.errors?.['email']"
+          class="text-danger"
+          [hidden]="email.valid || email.pristine"
+        >
+          * Invalid email
+        </span>
       </div>
       <div class="">
         <label for="password" class="form-label">Password</label>
         <input name="password" [formControl]="password" type="password" class="form-control"/>
+        <span
+          class="text-danger"
+          [hidden]="password.valid || password.pristine"
+        >
+          * Field required
+        </span>
       </div>
       <div class="form-check form-switch">
         <label for="active" class="form-check-label">Active</label>
@@ -40,3 +78,5 @@
 {{firstname.value}}
 <br />
 {{active.value}}
+<br>
+{{email.errors|json}}
