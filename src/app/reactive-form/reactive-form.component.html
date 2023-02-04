@@ -4,59 +4,59 @@
     <h5 class="card-title">Reactive froms</h5>
   </div>
   <div class="card-body">
-    <form>
+    <form [formGroup]="form_user" (ngSubmit)="process()">
       <div class="">
         <label for="firstname" class="form-label">Name</label>
-        <input name="firstname" [formControl]="firstname" type="text" class="form-control" />
+        <input name="firstname" formControlName="firstname" type="text" class="form-control" />
         <span
           class="text-danger"
-          [hidden]="firstname.valid || firstname.pristine"
+          [hidden]="form_user.get('firstname')?.valid || form_user.get('firstname')?.pristine"
         >
           * Field required
         </span>
       </div>
       <div class="">
         <label for="lastname" class="form-label">Last name</label>
-          <input name="lastname" [formControl]="lastname" type="text" class="form-control"/>
+          <input name="lastname" formControlName="lastname" type="text" class="form-control"/>
           <span
             class="text-danger"
-            [hidden]="lastname.valid || lastname.pristine"
+            [hidden]="form_user.get('lastname')?.valid || form_user.get('lastname')?.pristine"
           >
             * Field required
           </span>
       </div>
       <div class="">
         <label for="username" class="form-label">Username</label>
-        <input name="username" [formControl]="username" type="text" class="form-control" />
+        <input name="username" formControlName="username" type="text" class="form-control" />
         <span
           class="text-danger"
-          [hidden]="username.valid || username.pristine"
+          [hidden]="form_user.get('username')?.valid || form_user.get('username')?.pristine"
         >
           * Field required
         </span>
       </div>
       <div class="">
         <label for="email" class="form-label">Email</label>
-        <input name="email" [formControl]="email"type="text" class="form-control" />
+        <input name="email" formControlName="email" type="text" class="form-control" />
         <span
-          *ngIf="email.errors?.['required']"
+          *ngIf="email?.errors?.['required']"
           class="text-danger"
-          [hidden]="email.valid || email.pristine"
+          [hidden]="email?.valid || email?.pristine"
         >
           * Field required
         </span>
         <span
-          *ngIf="email.errors?.['email']"
+          *ngIf="email?.errors?.['email']"
           class="text-danger"
-          [hidden]="email.valid || email.pristine"
+          [hidden]="email?.valid || email?.pristine"
         >
           * Invalid email
         </span>
       </div>
       <div class="">
         <label for="password" class="form-label">Password</label>
-        <input name="password" [formControl]="password" type="password" class="form-control"/>
-        <span
+        <input name="password" formControlName="password" type="password" class="form-control"/>
+       <span
           class="text-danger"
           [hidden]="password.valid || password.pristine"
         >
@@ -65,18 +65,15 @@
       </div>
       <div class="form-check form-switch">
         <label for="active" class="form-check-label">Active</label>
-        <input name="active" [formControl]="active" type="checkbox" class="form-check-input" role="switch"/>
+        <input name="active" formControlName="active" type="checkbox" class="form-check-input" role="switch"/>
       </div>
-      <button type="submit" class="btn btn-dark">
+      <button type="submit" class="btn btn-dark" [disabled]="form_user.invalid">
         Save
       </button>
     </form>
   </div>
   <div class="card-footer"></div>
 </div>
-
-{{firstname.value}}
-<br />
-{{active.value}}
+{{form_user.value | json}}
 <br>
-{{email.errors|json}}
+{{form_user.get('active')?.value}}
