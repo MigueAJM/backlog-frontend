@@ -1,4 +1,12 @@
 <div class="container">
+  <app-children [title]="title"></app-children>
+  <div class="card">
+    <div class="card-body">
+      <label for="" class="form-label">Parent</label>
+      <input type="text" class="form-control" [(ngModel)]="title">
+    </div>
+  </div>
+  <hr>
   <app-reactive-form></app-reactive-form>
   <hr />
   <app-form></app-form>

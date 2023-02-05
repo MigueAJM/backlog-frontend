@@ -10,6 +10,7 @@ import { FormComponent } from './form/form.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { ChildrenComponent } from './children/children.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     CountComponent,
     ButtonComponent,
     FormComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    ChildrenComponent
   ],
   imports: [
     BrowserModule,
