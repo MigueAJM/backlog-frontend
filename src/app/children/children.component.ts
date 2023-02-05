@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-children',
@@ -8,4 +8,10 @@ import { Component, Input } from '@angular/core';
 export class ChildrenComponent {
   constructor() {}
   @Input() title?: string;
+  @Output() titleChange = new EventEmitter<string>();
+  emitTitleChange() {
+    this.titleChange.emit(this.title);
+    console.info('The title is change');
+    console.info(this.title);
+  }
 }

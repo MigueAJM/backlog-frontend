@@ -1,9 +1,12 @@
 <p>children works!</p>
 {{title}}
 <div class="card">
+  <div class="card-header">
+    <h5 class="card-title">Communication between components</h5>
+  </div>
   <div class="card-body">
     <label for="" class="form-label">Children</label>
-    <input type="text" class="form-control" [(ngModel)]="title">
+    <input type="text" class="form-control" (keyup)="emitTitleChange()"  [(ngModel)]="title">
   </div>
 </div>
 <br />
