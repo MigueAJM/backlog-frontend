@@ -29,7 +29,7 @@ export class ReactiveFormComponent {
     active: new FormControl(false),
   }); */
   form_user = this.fb.group({
-    name: ['', Validators.required],
+    firstname: ['', Validators.required],
     lastname: ['', [Validators.required]],
     username: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
