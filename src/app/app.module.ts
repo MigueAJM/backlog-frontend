@@ -12,6 +12,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { ChildrenComponent } from './children/children.component';
 
+import { ListMessagesComponent } from './list-messages/list-messages.component';
+import { AddMessagesComponent } from './add-messages/add-messages.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,14 +22,11 @@ import { ChildrenComponent } from './children/children.component';
     ButtonComponent,
     FormComponent,
     ReactiveFormComponent,
-    ChildrenComponent
+    ChildrenComponent,
+    ListMessagesComponent,
+    AddMessagesComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

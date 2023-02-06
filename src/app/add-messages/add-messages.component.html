@@ -1,0 +1,9 @@
+<form (ngSubmit)="addMessage()">
+  <div class="">
+    <label for="" class="form-label">Message</label>
+    <input type="text" class="form-control" name="message" [(ngModel)]="message">
+  </div>
+  <button class="btn btn-dark">Save</button>
+</form>
+{{message}}<br/>
+{{ messagesService.messages|json}}
